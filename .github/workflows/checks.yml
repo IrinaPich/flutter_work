@@ -16,11 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - Install dependencies
+      - name: Install dependencies
         run: flutter pub get
 
-      - Linter
+      - name: Linter
         run: bin/lint.sh
 
-      - Tests
+      - name: Tests
         run: bin/test.sh
