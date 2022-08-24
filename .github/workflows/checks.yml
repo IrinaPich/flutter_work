@@ -1,0 +1,32 @@
+name: tests
+
+on: [ pull_request, workflow_dispatch ]
+#on: [ push, workflow_dispatch ]
+
+jobs:
+
+  checks:
+
+    runs-on: ubuntu-latest
+
+    env:
+      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.0.5'
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Linter
+        run: bin/lint.sh
+
+      - name: Tests
+        run: bin/test.sh
