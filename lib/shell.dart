@@ -1,24 +1,26 @@
 // importing dart:io file
 import 'dart:io';
 import 'executeQuit.dart';
+import 'executeList.dart';
 
 void shell()
 {
-  while(true) {
+  String? command;
+  while(command != 'quit') {
     print("Please enter the command");
     // Reading string
-    String? command = stdin.readLineSync();
+    command = stdin.readLineSync();
 
 
     switch (command) {
       case 'quit':
-        executeQuit();
+        functionQuit();
         break;
-/*    case 'dir':
-      executePending();
-      break;*/
+      case 'list':
+        functionList();
+        break;
       default:
-        print("Undef");
+        print("The command \"$command\" is undefined.");
         break;
     }
   }
