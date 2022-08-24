@@ -7,14 +7,20 @@ jobs:
 
   checks:
 
-    runs-on: cirrusci/flutter:3.0.5
+    runs-on: ubuntu-latest
 
     env:
       GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.0.5'
+          channel: 'stable'
 
       - name: Install dependencies
         run: flutter pub get
