@@ -1,6 +1,6 @@
 // Define a function.
-void printText(String aPrintedText) {
-  print('The printed text is "$aPrintedText"'); // Print to console.
+void printText(String aText) {
+  print('The printed text is "$aText"'); // Print to console.
 }
 
 // This is where the app starts executing.
