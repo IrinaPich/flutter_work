@@ -1,0 +1,26 @@
+name: tests
+
+on: [ pull_request, workflow_dispatch ]
+#on: [ push, workflow_dispatch]
+
+jobs:
+
+  checks:
+
+    runs-on: cirrusci/flutter:3.0.5
+
+    env:
+      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - Install dependencies
+        run: flutter pub get
+
+      - Linter
+        run: bin/lint.sh
+
+      - Tests
+        run: bin/test.sh
