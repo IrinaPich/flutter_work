@@ -1,6 +1,5 @@
 // importing dart:io file
 import 'dart:io';
-import 'executeQuit.dart';
 import 'executeList.dart';
 
 void shell()
@@ -10,14 +9,13 @@ void shell()
     print("Please enter the command");
     // Reading string
     command = stdin.readLineSync();
-
-
     switch (command) {
       case 'quit':
-        functionQuit();
+        print('"The command, "quit" was executed! \nGood buy!"');
         break;
       case 'list':
-        functionList();
+        var resultList = getDirectoryList();
+        resultList.forEach((path) => print(path));
         break;
       default:
         print("The command \"$command\" is undefined.");

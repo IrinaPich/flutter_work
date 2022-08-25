@@ -1,5 +1,8 @@
+import 'dart:io';
 
-void functionList() {
-  print('"The command, "quit" was executed! \nGood buy!"'); // Print to console.
+List<String> getDirectoryList() {
+  Directory dir = Directory('.');
+  var r = dir.listSync();
+  var nameList = r.map((f) => f.path).toList();
+  return nameList;
 }
-
