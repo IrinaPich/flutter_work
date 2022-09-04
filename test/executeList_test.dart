@@ -41,6 +41,6 @@ void main() {
   test('Parent directory', () {
     var parameter = 'lib';
     var list = getDirectoryList(parameter);
-    assert(list.contains('lib\\hello_world.dart'));
+    assert(list.contains('lib/hello_world.dart'));
   });
 }
