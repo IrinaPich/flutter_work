@@ -1,19 +1,17 @@
-
 import 'dart:io';
 import 'package:flutter_work/executeCat.dart';
 
 import 'executeList.dart';
 
-void shell()
-{
+void shell() {
   String? input;
   List<String> command = ['qq'];
   String? parameter;
-  while(command[0] != 'quit') {
+  while (command[0] != 'quit') {
     parameter = null;
     print("Please enter the command");
     input = stdin.readLineSync();
-    if (input == null || input.isEmpty ) {
+    if (input == null || input.isEmpty) {
       continue;
     }
 
@@ -34,8 +32,7 @@ void shell()
         if (command.length > 1) {
           parameter = command[1];
           getFileContent(parameter);
-        }
-        else {
+        } else {
           print('file name is required');
         }
         break;
@@ -49,13 +46,3 @@ void shell()
 void main() {
   shell();
 }
-
-
-
-
-
-
-
-
-
-
