@@ -2,7 +2,13 @@ import 'package:test/test.dart';
 import 'package:flutter_work/executeList.dart';
 
 void main() {
-  test('List of current directory', () {
+  test('Parent directory', () {
+    var parameter = '';
+    var list = getDirectoryList(parameter);
+    assert(list.contains('/bin'));
+  });
+
+/*  test('List of current directory', () {
     var parameter = '';
     var list = getDirectoryList(parameter);
     var expected = [
@@ -26,7 +32,7 @@ void main() {
     expect(
         list,
         equals(expected));
-  });
+  });*/
 
   test('Parent directory', () {
     var parameter = '..';
