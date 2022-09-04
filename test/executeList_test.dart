@@ -5,7 +5,7 @@ void main() {
   test('Parent directory', () {
     var parameter = '';
     var list = getDirectoryList(parameter);
-    assert(list.contains('/bin'));
+    assert(list.contains('./bin'));
   });
 
 /*  test('List of current directory', () {
