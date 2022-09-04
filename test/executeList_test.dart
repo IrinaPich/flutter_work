@@ -27,4 +27,20 @@ void main() {
         list,
         equals(expected));
   });
+
+  test('Parent directory', () {
+    var parameter = '..';
+    var list = getDirectoryList(parameter);
+    var expected = [
+      '..\\flutter_work'];
+    expect(
+        list,
+        equals(expected));
+  });
+
+  test('Parent directory', () {
+    var parameter = 'lib';
+    var list = getDirectoryList(parameter);
+    assert(list.contains('lib\\hello_world.dart'));
+  });
 }
