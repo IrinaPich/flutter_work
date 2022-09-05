@@ -1,11 +1,14 @@
 import 'package:test/test.dart';
 import 'package:flutter_work/executeList.dart';
+import "dart:io";
 
 void main() {
+  String separator = Platform.pathSeparator;
+
   test('Parent directory', () {
     var parameter = '';
     var list = getDirectoryList(parameter);
-    assert(list.contains('./bin'));
+    assert(list.contains('.${separator}bin'));
   });
 
 /*  test('List of current directory', () {
@@ -37,16 +40,13 @@ void main() {
   test('Parent directory', () {
     var parameter = '..';
     var list = getDirectoryList(parameter);
-    var expected = [
-      '../flutter_work'];
-    expect(
-        list,
-        equals(expected));
+    var expected = ['..${separator}flutter_work'];
+    expect(list, equals(expected));
   });
 
   test('Parent directory', () {
     var parameter = 'lib';
     var list = getDirectoryList(parameter);
-    assert(list.contains('lib/hello_world.dart'));
+    assert(list.contains('lib${separator}hello_world.dart'));
   });
 }
