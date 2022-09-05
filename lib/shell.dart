@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter_work/executeCat.dart';
-
-import 'executeList.dart';
+import 'package:flutter_work/executeCd.dart';
+import 'package:flutter_work/executeList.dart';
 
 void shell() {
   String? input;
@@ -19,7 +19,7 @@ void shell() {
 
     switch (command[0]) {
       case 'quit':
-        print('"The command, "quit" was executed! \nGood buy!"');
+        print('"The command, "quit" was executed! \nGoodbye!"');
         break;
       case 'list':
         if (command.length > 1) {
@@ -31,10 +31,11 @@ void shell() {
       case 'cd':
         if (command.length > 1) {
           parameter = command[1];
-          String content = getFileContent(parameter);
-          print(content);
+          changeCurrentDirectory(parameter);
+          print('current dir is: $parameter');
+
         } else {
-          print('file name is required');
+          print('directory name is required');
         }
         break;
       case 'cat':
