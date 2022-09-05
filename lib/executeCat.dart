@@ -1,9 +1,5 @@
 import 'dart:io';
 
-void getFileContent(String parameter) {
-  print(parameter);
-  File(parameter).readAsString().then((String fileContent) {
-    print('File Contents\n---------------');
-    print(fileContent);
-  });
+String getFileContent(String parameter) {
+  return File(parameter).readAsStringSync();
 }

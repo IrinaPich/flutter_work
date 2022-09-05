@@ -3,7 +3,7 @@ import 'dart:io';
 List<String> getDirectoryList(String? parameter) {
   String directoryName;
   if (parameter != null) {
-   directoryName = parameter;
+    directoryName = parameter;
   } else {
     directoryName = '.';
   }

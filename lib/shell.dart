@@ -28,10 +28,20 @@ void shell() {
         var resultList = getDirectoryList(parameter);
         resultList.forEach((path) => print(path));
         break;
+      case 'cd':
+        if (command.length > 1) {
+          parameter = command[1];
+          String content = getFileContent(parameter);
+          print(content);
+        } else {
+          print('file name is required');
+        }
+        break;
       case 'cat':
         if (command.length > 1) {
           parameter = command[1];
-          getFileContent(parameter);
+          String content = getFileContent(parameter);
+          print(content);
         } else {
           print('file name is required');
         }
