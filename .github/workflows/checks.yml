@@ -36,4 +36,4 @@ jobs:
         run: bin/lint.sh
 
       - name: Tests
-        run: flutter test --reporter=github
+        run: bin/test.sh
