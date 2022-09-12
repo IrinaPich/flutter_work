@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:flutter_work/executeList.dart';
+import 'package:flutter_work/command_line/executeList.dart';
 import "dart:io";
 
 void main() {
@@ -44,9 +44,9 @@ void main() {
     expect(list, equals(expected));
   });
 
-  test('Parent directory', () {
+  test('Directory Lib', () {
     var parameter = 'lib';
     var list = getDirectoryList(parameter);
-    assert(list.contains('lib${separator}hello_world.dart'));
+    assert(list.contains('lib${separator}factorial_helloworld'));
   });
 }

@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:flutter_work/factorial.dart';
+import 'package:flutter_work/factorial_helloworld/factorial.dart';
 
 void main() {
   test('Factorial of 11', () {

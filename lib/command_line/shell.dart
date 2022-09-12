@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:flutter_work/executeCat.dart';
-import 'package:flutter_work/executeCd.dart';
-import 'package:flutter_work/executeList.dart';
+import 'package:flutter_work/command_line/executeCat.dart';
+import 'package:flutter_work/command_line/executeCd.dart';
+import 'package:flutter_work/command_line/executeList.dart';
 
 void shell() {
   String? input;
