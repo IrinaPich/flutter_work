@@ -25,8 +25,8 @@ void readShapeList() {
         break;
 
       case 'Isosceles triangle':
-        print('Please enter parameters.... ');
-        // add shape name and input (parameters) to the list
+        String figureName = 'Isosceles triangle';
+        Figure p = Figure(figureName);
         break;
 
       case 'Rectangle':
