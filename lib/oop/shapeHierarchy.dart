@@ -1,10 +1,11 @@
 import 'dart:io';
+import 'dart:math';
 
 class Figure {
   Figure(String name) {
     String? parameters;
-    String? height;
-    String? base;
+    double height;
+    double base;
 //    while (parameters != '') {
     print('Please enter Height and Base of $name separated by a space');
     parameters = stdin.readLineSync();
@@ -21,10 +22,16 @@ class Figure {
 //    }
     }
     var splitParameters = parameters.split(' ');
-    height = splitParameters[0];
-    base = splitParameters[1];
+    var heightString = splitParameters[0];
+    var baseString = splitParameters[1];
 
-    int area = int.parse(height) + int.parse(base);
-    print('The area of $name is $area');
+    height = double.parse(heightString);
+    base = double.parse(baseString);
+
+    double area = height * base/2;
+    double perimeter = 2 * sqrt(height * height + (base * base / 4)) + base;
+//    var format = NumberFormat("###.0#", "en_US");
+
+    print('$name: area ${area.toStringAsFixed(2)} perimeter ${perimeter.toStringAsFixed(2)}');
   }
 }
