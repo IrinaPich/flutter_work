@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter_work/oop/shapeHierarchy.dart';
 
-void readShapeList() {
+/*void readShapeList() {
   String? input;
   while (input != '') {
     print('Please enter the Figure Name or click Enter if you finished your list');
@@ -15,8 +15,8 @@ void readShapeList() {
         break;
 
       case 'Equilateral Triangle':
-        print('Please enter parameters .... ');
-        // add shape name and input (parameters) to the list
+        String figureName = 'Equilateral triangle';
+        EquilateralTriangle p = EquilateralTriangle(name);
         break;
 
       case 'Scalene triangle':
@@ -26,7 +26,7 @@ void readShapeList() {
 
       case 'Isosceles triangle':
         String figureName = 'Isosceles triangle';
-        Figure p = Figure(figureName);
+        IsoscelesTriangle p = IsoscelesTriangle(figureName);
         break;
 
       case 'Rectangle':
@@ -58,4 +58,4 @@ void readShapeList() {
 
 void main() {
   readShapeList();
-}
+}*/
