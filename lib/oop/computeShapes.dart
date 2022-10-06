@@ -19,12 +19,12 @@ import 'package:flutter_work/oop/shapeHierarchy.dart';
         EquilateralTriangle p = EquilateralTriangle(name);
         break;
 
-      case 'Scalene triangle':
+      case 'Scalene Triangle':
         print('Please enter parameters .... ');
         // add shape name and input (parameters) to the list
         break;
 
-      case 'Isosceles triangle':
+      case 'Isosceles Triangle':
         String figureName = 'Isosceles triangle';
         IsoscelesTriangle p = IsoscelesTriangle(figureName);
         break;
