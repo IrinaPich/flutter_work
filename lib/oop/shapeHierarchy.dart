@@ -23,8 +23,9 @@ class EquilateralTriangle extends Triangle {
   EquilateralTriangle(String name, double side):super(name, side, side, side);
   @override double area() {
     double h = a * sqrt(3) / 2;
-    return h * a / 4;
+    return h * a / 2;
   }
+
 }
 
 /*class IsoscelesTriangle extends Triangle {
