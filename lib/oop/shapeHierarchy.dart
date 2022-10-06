@@ -34,9 +34,13 @@ class EquilateralTriangle extends Triangle {
 }
 
 class IsoscelesTriangle extends Triangle {
-  IsoscelesTriangle(String name, double height, double base)
-      : super(name, sqrt(base * base / 4 + height * height),
-            sqrt(base * base / 4 + height * height), base);
+  factory IsoscelesTriangle(String name, double height, double base) {
+    double side = sqrt(base * base / 4 + height * height);
+    return IsoscelesTriangle._(name, side, side, base);
+  }
+
+  IsoscelesTriangle._(String name, double a, double b, double c)
+      : super(name, a, b, c);
 
   @override
   double area() {
@@ -52,9 +56,34 @@ class ScaleneTriangle extends Triangle {
   @override
   double area() {
     double semiPerimeter = perimeter() / 2;
-    return sqrt(semiPerimeter * (semiPerimeter - a) * (semiPerimeter - b) * (semiPerimeter - c));
+    return sqrt(semiPerimeter *
+        (semiPerimeter - a) *
+        (semiPerimeter - b) *
+        (semiPerimeter - c));
   }
 }
+
+/*abstract class Triangle extends Figure {
+  Triangle(String name, this.a, this.b, this.c) : super(name);
+  double a;
+  double b;
+  double c;
+
+  @override
+  double perimeter() {
+    return a + b + c;
+  }
+}
+
+class EquilateralTriangle extends Triangle {
+  EquilateralTriangle(String name, double side) : super(name, side, side, side);
+
+  @override
+  double area() {
+    double h = a * sqrt(3) / 2;
+    return h * a / 2;
+  }
+}*/
 
 /*class IsoscelesTriangle extends Triangle {
   IsoscelesTriangle(String name):super(name) {
