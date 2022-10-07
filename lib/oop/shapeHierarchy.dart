@@ -35,43 +35,43 @@ class IsoscelesTriangle extends Triangle {
     return IsoscelesTriangle._(name, side, side, base);
   }
 
-  IsoscelesTriangle._(String name, double a, double b, double c)
-      : super(name, a, b, c);
+  IsoscelesTriangle._(String name, double aSide, double bSide, double cSide)
+      : super(name, aSide, bSide, cSide);
 
   @override
   double area() {
-    double height = sqrt(a * a - c * c / 4);
-    return 0.5 * height * c;
+    double height = sqrt(aSide * aSide - cSide * cSide / 4);
+    return 0.5 * height * cSide;
   }
 }
 
 class ScaleneTriangle extends Triangle {
-  ScaleneTriangle(String name, double a, double b, double c)
-      : super(name, a, b, c);
+  ScaleneTriangle(String name, double aSide, double bSide, double cSide)
+      : super(name, aSide, bSide, cSide);
 
   @override
   double area() {
     double semiPerimeter = perimeter() / 2;
     return sqrt(semiPerimeter *
-        (semiPerimeter - a) *
-        (semiPerimeter - b) *
-        (semiPerimeter - c));
+        (semiPerimeter - aSide) *
+        (semiPerimeter - bSide) *
+        (semiPerimeter - cSide));
   }
 }
 
 class Rectangle extends Figure {
-  Rectangle(String name, this.a, this.b) : super(name);
-  double a;
-  double b;
+  Rectangle(String name, this.aSide, this.bSide) : super(name);
+  double aSide;
+  double bSide;
 
   @override
   double perimeter() {
-    return 2 * (a + b);
+    return 2 * (aSide + bSide);
   }
 
   @override
   double area() {
-    return a * b;
+    return aSide * bSide;
   }
 }
 

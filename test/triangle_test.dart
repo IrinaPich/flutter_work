@@ -3,62 +3,78 @@ import 'package:flutter_work/oop/shapeHierarchy.dart';
 
 void main() {
   group('Test Equilateral Triangle Class', () {
+    // Given Equilateral Triangle with equal sides = 3
     test('Perimeter for each side = 3', () {
       double side = 3;
       var t = EquilateralTriangle('Equilateral', side);
+      // When compute perimeter used perimeter() function
       var perimeter = t.perimeter();
-      expect(perimeter, equals(9));
+      // Then value must be the expected = 9
+      var expectedPerimeter = 9;
+      expect(perimeter, equals(expectedPerimeter));
     });
     test('Area for each side = 4', () {
       double side = 4;
       var t = EquilateralTriangle('Equilateral', side);
+      // When compute area used area() function
       var area = t.area();
-      double expected = 6.9282;
-      double difference = (area - expected).abs();
+      // Then value must be the expected = 6.9282
+      double expectedArea = 6.9282;
+      double difference = (area - expectedArea).abs();
       expect(difference < 0.0001, equals(true));
     });
   });
 
   group('Test Isosceles Triangle Class', () {
+    // Given Isosceles Triangle with height = 4 and base = 3
     test('Perimeter for height = 4 and base = 3', () {
       double height = 4;
       double base = 3;
       var t = IsoscelesTriangle('Isosceles', height, base);
+      // When compute perimeter used perimeter() function
       var perimeter = t.perimeter();
-      double expected = 11.544;
-      double difference = (perimeter - expected).abs();
+      // Then value must be the expected = 11.544
+      double expectedPerimeter = 11.544;
+      double difference = (perimeter - expectedPerimeter).abs();
       expect(difference < 0.0001, equals(true));
     });
     test('Area for height = 4 and base = 3', () {
       double height = 4;
       double base = 3;
       var t = IsoscelesTriangle('Isosceles', height, base);
+      // When compute area used area() function
       var area = t.area();
-      double expected = 6;
-      double difference = (area - expected).abs();
+      // Then value must be the expected = 6
+      double expectedArea = 6;
+      double difference = (area - expectedArea).abs();
       expect(difference < 0.0001, equals(true));
     });
   });
 
   group('Test Scalene Triangle Class', () {
-    test('Perimeter for a = 4, b = 3, c = 5', () {
-      double a = 4;
-      double b = 3;
-      double c = 5;
-      var t = ScaleneTriangle('Scalene', a, b, c);
+    // Given Scalene Triangle with sides a = 4, b = 3, c = 5
+    test('Perimeter for sides a = 4, b = 3, c = 5', () {
+      double aSide = 4;
+      double bSide = 3;
+      double cSide = 5;
+      var t = ScaleneTriangle('Scalene', aSide, bSide, cSide);
+      // When compute perimeter used perimeter() function
       var perimeter = t.perimeter();
-      double expected = 12;
-      double difference = (perimeter - expected).abs();
+      // Then value must be the expected = 12
+      double expectedPerimeter = 12;
+      double difference = (perimeter - expectedPerimeter).abs();
       expect(difference < 0.0001, equals(true));
     });
     test('Area for a = 4, b = 3, c = 5', () {
-      double a = 4;
-      double b = 3;
-      double c = 5;
-      var t = ScaleneTriangle('Scalene', a, b, c);
+      double aSide = 4;
+      double bSide = 3;
+      double cSide = 5;
+      var t = ScaleneTriangle('Scalene', aSide, bSide, cSide);
+      // When compute area used area() function
       var area = t.area();
-      double expected = 6;
-      double difference = (area - expected).abs();
+      // Then value must be the expected = 6
+      double expectedArea = 6;
+      double difference = (area - expectedArea).abs();
       expect(difference < 0.0001, equals(true));
     });
   });
