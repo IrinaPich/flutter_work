@@ -5,31 +5,27 @@ abstract class Figure {
   Figure(this.name);
 
   String name;
-
   double area();
-
   double perimeter();
 }
 
 abstract class Triangle extends Figure {
-  Triangle(String name, this.a, this.b, this.c) : super(name);
-  double a;
-  double b;
-  double c;
+  Triangle(String name, this.aSide, this.bSide, this.cSide) : super(name);
+  double aSide;
+  double bSide;
+  double cSide;
 
   @override
   double perimeter() {
-    return a + b + c;
+    return aSide + bSide + cSide;
   }
 }
 
 class EquilateralTriangle extends Triangle {
-  EquilateralTriangle(String name, double side) : super(name, side, side, side);
-
-  @override
-  double area() {
-    double h = a * sqrt(3) / 2;
-    return h * a / 2;
+  EquilateralTriangle(String name, double side):super(name, side, side, side);
+  @override double area() {
+    double h = aSide * sqrt(3) / 2;
+    return h * aSide / 2;
   }
 }
 
