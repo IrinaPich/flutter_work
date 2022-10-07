@@ -3,38 +3,61 @@ import 'package:flutter_work/oop/shapeHierarchy.dart';
 
 void main() {
   group('Test Rectangle Class', () {
-    // Given Equilateral Triangle with equal sides = 3
     test('Perimeter for sides 3 and 5', () {
-      double a = 3;
-      double b = 5;
-      var t = Rectangle('Rectangle', a, b);
+      // Given Rectangle with sides aSide = 3, bSide = 5
+      double aSide = 3;
+      double bSide = 5;
+      var t = Rectangle('Rectangle', aSide, bSide);
+
+      // When compute perimeter used perimeter() function
       var perimeter = t.perimeter();
-      expect(perimeter, equals(16));
+
+      // Then value must be the expected = 16
+      double expectedPerimeter = 16;
+      expect(perimeter, equals(expectedPerimeter));
     });
+
     test('Area for sides 3 and 5', () {
-      double a = 3;
-      double b = 5;
-      var t = Rectangle('Rectangle', a, b);
+      // Given Rectangle with sides a = 3, b = 5
+      double aSide = 3;
+      double bSide = 5;
+      var t = Rectangle('Rectangle', aSide, bSide);
+
+      // When compute area used area() function
       var area = t.area();
-      double expected = 15;
-      double difference = (area - expected).abs();
+
+      // Then value must be the expected = 15
+      double expectedArea = 15;
+      double difference = (area - expectedArea).abs();
       expect(difference < 0.0001, equals(true));
     });
   });
 
   group('Test Square Class', () {
     test('Perimeter for side = 5', () {
+      // Given Square with side = 5
       double side = 5;
       var t = Square('Square', side);
+
+      // When compute perimeter used perimeter() function
       var perimeter = t.perimeter();
-      expect(perimeter, equals(20));
+
+      // Then value must be the expected = 20
+      double expectedPerimeter = 20;
+      expect(perimeter, equals(expectedPerimeter));
     });
+
     test('Area for side = 5', () {
+      // Given Square with side = 5
       double side = 5;
       var t = Square('Square', side);
+
+      // When compute area used area() function
       var area = t.area();
-      double expected = 25;
-      double difference = (area - expected).abs();
+
+      // Then value must be the expected = 25
+      double expectedArea = 25;
+      double difference = (area - expectedArea).abs();
       expect(difference < 0.0001, equals(true));
     });
   });
