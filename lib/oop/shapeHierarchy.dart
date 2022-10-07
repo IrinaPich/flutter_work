@@ -63,27 +63,25 @@ class ScaleneTriangle extends Triangle {
   }
 }
 
-/*abstract class Triangle extends Figure {
-  Triangle(String name, this.a, this.b, this.c) : super(name);
+class Rectangle extends Figure {
+  Rectangle(String name, this.a, this.b) : super(name);
   double a;
   double b;
-  double c;
 
   @override
   double perimeter() {
-    return a + b + c;
+    return 2 * (a + b);
   }
-}
-
-class EquilateralTriangle extends Triangle {
-  EquilateralTriangle(String name, double side) : super(name, side, side, side);
 
   @override
   double area() {
-    double h = a * sqrt(3) / 2;
-    return h * a / 2;
+    return a * b;
   }
-}*/
+}
+
+class Square extends Rectangle {
+  Square(String name, double side) : super(name, side, side);
+}
 
 /*class IsoscelesTriangle extends Triangle {
   IsoscelesTriangle(String name):super(name) {
