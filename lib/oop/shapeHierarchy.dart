@@ -4,7 +4,11 @@ abstract class Figure {
   Figure(this.name);
 
   String name;
+
+  String parametersToString();
+
   double area();
+
   double perimeter();
 }
 
@@ -21,10 +25,21 @@ abstract class Triangle extends Figure {
 }
 
 class EquilateralTriangle extends Triangle {
-  EquilateralTriangle(String name, double side):super(name, side, side, side);
-  @override double area() {
+  EquilateralTriangle(String name, double side) : super(name, side, side, side);
+
+  @override
+  double area() {
     double h = aSide * sqrt(3) / 2;
     return h * aSide / 2;
+  }
+
+  static String parametersName() {
+    return 'Side';
+  }
+
+  @override
+  String parametersToString() {
+    return '${parametersName()} $aSide';
   }
 }
 
@@ -42,6 +57,15 @@ class IsoscelesTriangle extends Triangle {
     double height = sqrt(aSide * aSide - cSide * cSide / 4);
     return 0.5 * height * cSide;
   }
+
+  static String parametersName() {
+    return 'Height and Base';
+  }
+
+  @override
+  String parametersToString() {
+    return '${parametersName()} $aSide, $cSide';
+  }
 }
 
 class ScaleneTriangle extends Triangle {
@@ -55,6 +79,15 @@ class ScaleneTriangle extends Triangle {
         (semiPerimeter - aSide) *
         (semiPerimeter - bSide) *
         (semiPerimeter - cSide));
+  }
+
+  static String parametersName() {
+    return 'a, b and c sides';
+  }
+
+  @override
+  String parametersToString() {
+    return '${parametersName()} $aSide, $bSide, $cSide';
   }
 }
 
@@ -72,44 +105,26 @@ class Rectangle extends Figure {
   double area() {
     return aSide * bSide;
   }
+
+  static String parametersName() {
+    return 'a and b sides';
+  }
+
+  @override
+  String parametersToString() {
+    return '${parametersName()} $aSide, $bSide';
+  }
 }
 
 class Square extends Rectangle {
   Square(String name, double side) : super(name, side, side);
-}
 
-/*class IsoscelesTriangle extends Triangle {
-  IsoscelesTriangle(String name):super(name) {
-    String? parameters;
-    double height;
-    double base;
-//    while (parameters != '') {
-    print('Please enter Height and Base of $name separated by a space');
-    parameters = stdin.readLineSync();
-
-    while (parameters == null || parameters.isEmpty) {
-//      parameter = null;
-      print(
-          'Please enter correct parameters Height and Base of $name separated by a space');
-      parameters = stdin.readLineSync();
-      if (parameters == null || parameters.isEmpty) {
-        continue;
-      }
-
-//    }
-    }
-    var splitParameters = parameters.split(' ');
-    var heightString = splitParameters[0];
-    var baseString = splitParameters[1];
-
-    height = double.parse(heightString);
-    base = double.parse(baseString);
-
-    double area = height * base/2;
-    Figure.area = area;
-    double perimeter = 2 * sqrt(height * height + (base * base / 4)) + base;
-//    var format = NumberFormat("###.0#", "en_US");
-
-    print('$name: area ${area.toStringAsFixed(2)} perimeter ${perimeter.toStringAsFixed(2)}');
+  static String parametersName() {
+    return 'side';
   }
-}*/
+
+  @override
+  String parametersToString() {
+    return '${parametersName()} $aSide';
+  }
+}

@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter_work/oop/shapeHierarchy.dart';
 
 List<Figure> readShapeList() {
+  String parametersName;
   String? input;
   List<Figure> figures = [];
   while (input != '') {
@@ -16,19 +17,22 @@ List<Figure> readShapeList() {
       case 'Equilateral Triangle':
         String name = 'Equilateral Triangle';
         String? parameter;
-        print('Please enter Side of $name');
+        print('Please enter ${EquilateralTriangle.parametersName()} of $name');
         parameter = stdin.readLineSync();
         while (parameter == null || parameter.isEmpty) {
-          print('Please enter correct parameter Side of $name');
+          print(
+              'Please enter correct parameter ${EquilateralTriangle.parametersName()} of $name');
           parameter = stdin.readLineSync();
           if (parameter == null || parameter.isEmpty) {
-            print('Parameter Side is incorrect ');
+            print(
+                'Parameter ${EquilateralTriangle.parametersName()} is incorrect ');
             continue;
           }
         }
         double? side = double.tryParse(parameter);
         if (side == null) {
-          print('Parameter Side is incorrect ');
+          print(
+              'Parameter ${EquilateralTriangle.parametersName()} is incorrect ');
           continue;
         }
         var t = EquilateralTriangle(name, side);
@@ -38,20 +42,23 @@ List<Figure> readShapeList() {
       case 'Scalene Triangle':
         String name = 'Scalene Triangle';
         String? parameters;
-        print('Please enter a, b and c sides of $name separated by a space');
+        print(
+            'Please enter ${ScaleneTriangle.parametersName()} of $name separated by a space');
         parameters = stdin.readLineSync();
         while (parameters == null || parameters.isEmpty) {
           print(
-              'Please enter correct parameters a, b and c sides of $name separated by a space');
+              'Please enter correct parameters ${ScaleneTriangle.parametersName()} of $name separated by a space');
           parameters = stdin.readLineSync();
           if (parameters == null || parameters.isEmpty) {
-            print('Parameters a, b and c sides are incorrect ');
+            print(
+                'Parameters ${ScaleneTriangle.parametersName()} are incorrect ');
             continue;
           }
         }
         var splitParameters = parameters.split(' ');
         if (splitParameters.length < 3) {
-          print('Parameters a, b and c sides are incorrect ');
+          print(
+              'Parameters ${ScaleneTriangle.parametersName()} are incorrect ');
           continue;
         }
         var aSideString = splitParameters[0];
@@ -61,7 +68,8 @@ List<Figure> readShapeList() {
         double? bSide = double.tryParse(bSideString);
         double? cSide = double.tryParse(cSideString);
         if (aSide == null || bSide == null || cSide == null) {
-          print('Parameters a, b and c sides are incorrect ');
+          print(
+              'Parameters ${ScaleneTriangle.parametersName()} are incorrect ');
           continue;
         }
         var t = ScaleneTriangle(name, aSide, bSide, cSide);
@@ -71,20 +79,23 @@ List<Figure> readShapeList() {
       case 'Isosceles Triangle':
         String name = 'Isosceles Triangle';
         String? parameters;
-        print('Please enter Height and Base of $name separated by a space');
+        print(
+            'Please enter ${IsoscelesTriangle.parametersName()} of $name separated by a space');
         parameters = stdin.readLineSync();
         while (parameters == null || parameters.isEmpty) {
           print(
-              'Please enter correct parameters Height and Base of $name separated by a space');
+              'Please enter correct parameters ${IsoscelesTriangle.parametersName()} of $name separated by a space');
           parameters = stdin.readLineSync();
           if (parameters == null || parameters.isEmpty) {
-            print('Parameters Height and Base are incorrect ');
+            print(
+                'Parameters ${IsoscelesTriangle.parametersName()} are incorrect ');
             continue;
           }
         }
         var splitParameters = parameters.split(' ');
         if (splitParameters.length < 2) {
-          print('Parameters Height and Base are incorrect ');
+          print(
+              'Parameters ${IsoscelesTriangle.parametersName()}e are incorrect ');
           continue;
         }
         var heightString = splitParameters[0];
@@ -92,7 +103,8 @@ List<Figure> readShapeList() {
         double? height = double.tryParse(heightString);
         double? base = double.tryParse(baseString);
         if (height == null || base == null) {
-          print('Parameters Height and Base are incorrect ');
+          print(
+              'Parameters ${IsoscelesTriangle.parametersName()} are incorrect ');
           continue;
         }
         var t = IsoscelesTriangle(name, height, base);
@@ -102,20 +114,21 @@ List<Figure> readShapeList() {
       case 'Rectangle':
         String name = 'Rectangle';
         String? parameters;
-        print('Please enter a and b sides of $name separated by a space');
+        print(
+            'Please enter ${Rectangle.parametersName()} of $name separated by a space');
         parameters = stdin.readLineSync();
         while (parameters == null || parameters.isEmpty) {
           print(
-              'Please enter correct parameters a and b sides of $name separated by a space');
+              'Please enter correct parameters ${Rectangle.parametersName()} of $name separated by a space');
           parameters = stdin.readLineSync();
           if (parameters == null || parameters.isEmpty) {
-            print('Parameters a and b sides are incorrect');
+            print('Parameters ${Rectangle.parametersName()} are incorrect');
             continue;
           }
         }
         var splitParameters = parameters.split(' ');
         if (splitParameters.length < 2) {
-          print('Parameters a and b sides are incorrect ');
+          print('Parameters ${Rectangle.parametersName()} are incorrect ');
           continue;
         }
         var aSideString = splitParameters[0];
@@ -123,7 +136,7 @@ List<Figure> readShapeList() {
         double? aSide = double.tryParse(aSideString);
         double? bSide = double.tryParse(bSideString);
         if (aSide == null || bSide == null) {
-          print('Parameters a and b sides are incorrect ');
+          print('Parameters ${Rectangle.parametersName()} are incorrect ');
           continue;
         }
         var t = Rectangle(name, aSide, bSide);
@@ -133,34 +146,25 @@ List<Figure> readShapeList() {
       case 'Square':
         String name = 'Square';
         String? parameter;
-        print('Please enter Side of $name');
+        print('Please enter ${Square.parametersName()} of $name');
         parameter = stdin.readLineSync();
         while (parameter == null || parameter.isEmpty) {
-          print('Please enter correct parameter Side of $name');
+          print(
+              'Please enter correct parameter ${Square.parametersName()} of $name');
           parameter = stdin.readLineSync();
           if (parameter == null || parameter.isEmpty) {
-            print('Parameter Side is incorrect ');
+            print('Parameter ${Square.parametersName()} is incorrect ');
             continue;
           }
         }
         double? side = double.tryParse(parameter);
         if (side == null) {
-          print('Parameter Side is incorrect ');
+          print('Parameter ${Square.parametersName()} is incorrect ');
           continue;
         }
         var t = Square(name, side);
         figures.add(t);
         break;
-
-/*    case 'Ellipsoid':
-        print('Please enter parameters .... ');
-        // add shape name and input (parameters) to the list
-        break;
-
-      case 'Circle':
-        print('Please enter parameters .... ');
-        // add shape name and input (parameters) to the list
-        break;*/
 
       default:
         print("Figure name \"$input\" not recognized");
@@ -172,8 +176,8 @@ List<Figure> readShapeList() {
 
 void printFiguresList(List resultList) {
   for (var figure in resultList) {
-    return print(
-        '${figure.name}: Perimeter - ${figure.perimeter()}, Area - ${figure.area()}');
+    print(
+        '${figure.name} (${figure.parametersToString()}): Perimeter - ${figure.perimeter()}, Area - ${figure.area()}');
   }
 }
 
